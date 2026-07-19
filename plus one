@@ -12,3 +12,16 @@ class Solution {
         return res;
     }
 }
+
+MISSING NUMBER IN ARRAY
+class Solution {
+    public int missingNumber(int[] nums) {
+        long n=nums.length;
+        long sum=n*(n+1)/2;
+        long ArrayS=0;
+        for(int ele:nums){
+            ArrayS+=ele;
+        }
+        return (int)(sum-ArrayS);
+    }
+}
