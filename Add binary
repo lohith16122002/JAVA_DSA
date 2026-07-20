@@ -17,3 +17,13 @@ j--;
 }
 return s.reverse().toString();
 }}
+
+
+remove element? usage of real world?  
+code: int index=0;
+for(int i=0;i<arr.length;i++)
+{if(arr[i]!=0){ arr[index]=arr[i] ; index++;  }}
+return index; 
+
+Remove inactive users from a list.
+Filter out invalid transactions.
