@@ -1,3 +1,19 @@
+Squrt(x):
+
+class Solution {
+    public int mySqrt(int x) {if(x<2) return x;
+        long low=0,right=x/2;
+        while(low<=right){
+            long mid=low+(right-low)/2;
+            long square=mid*mid;
+            if(square==x) return (int) mid;
+
+            if(square<x) {low=mid+1;}else{right=mid-1;}
+        }return (int) right;
+
+    }
+}
+
 1.Add Binary Number?
 class Solution {
     public String addBinary(String a, String b) {
