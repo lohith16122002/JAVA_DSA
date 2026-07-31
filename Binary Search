@@ -1,4 +1,39 @@
- Split Array Largest Sum
+Aggressive Cows
+
+class Solution {
+    public int aggressiveCows(int[] arr, int k) {
+        Arrays.sort(arr);
+        // code here
+        int n=arr.length;
+        int low=1;
+        int high=arr[n-1]-arr[0];
+        int ans=0;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(can(arr,k,mid)){
+                ans=mid; low=mid+1;
+               
+            }else{
+                high=mid-1;
+            }
+        }return ans;
+    }
+    private boolean can(int[] arr,int k,int gap){
+        int count=1;
+        int last=arr[0];
+        for(int i=1;i<arr.length;i++){
+        if(arr[i]-last>=gap){
+            count++;
+            last=arr[i];
+        }
+        }
+        return count>=k;
+        
+    }
+    }
+
+
+Split Array Largest Sum
 
 class Solution {
     public int splitArray(int[] nums, int k) {
