@@ -1,3 +1,33 @@
+ Minimum Number of Days to Make m Bouquets
+class Solution {
+    public int minDays(int[] bloomDay, int m, int k) {
+if((long)m*k>bloomDay.length) return -1;
+
+int min=Integer.MAX_VALUE;
+int max=Integer.MIN_VALUE:
+for(int bloom:bloomDay){
+min=Math.min(min,bloom);
+max=Math.max(max,bloom);
+}
+for(int i=min;i<max;i++){
+if(daysss(bloomDay,m,k,i)){
+return i;}}return -1;}
+
+private boolean daysss(int[] bloomDay,int m,int k,int day){
+int count=0,bouquets=0;
+while(int da:bloomDay){
+if(da<=day){
+count++;
+if(count==k){
+bouquets++;
+count=0;}
+}else{
+count=0;}
+return bloomDay>=m;
+}
+}
+
+
 class Solution {
     public int kthSmallest(int[][] mat, int k) {
     
