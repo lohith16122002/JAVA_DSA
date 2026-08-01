@@ -1,3 +1,42 @@
+class Solution {
+    public int kthSmallest(int[][] mat, int k) {
+    
+        //Kth smallest element in a Matrix
+
+        int n=mat.length;
+        int low=mat[0][0];
+        int high=mat[n-1][n-1];
+        
+            while(low<=high){
+                int mid=low+(high-low)/2;
+            
+            if(counts(mat,k,mid,n)){
+                high=mid-1;
+            }else{
+                low=mid+1;
+            }
+        }return low;}
+        
+    
+    private boolean counts(int[][] mat,int k,int target,int n){
+        int count=0;
+        int row=n-1,col=0;
+        while(row>=0 && col<=n-1){
+            if(mat[row][col]<=target){
+                count+=(row+1);
+                col++;
+            }else{
+                row--;
+            }
+        }
+        return count>=k;
+    }
+}
+
+   
+
+
+
 Aggressive Cows
 
 class Solution {
