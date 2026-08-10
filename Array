@@ -17,6 +17,21 @@ class Solution {
     }
 }
 (optimize)
+        int low = 0;
+        int high = height.length - 1;
+        int ans = 0;
+        while (low < high) {
+            int width = high - low;
+            int h = Math.min(height[low], height[high]);
+            int area = width * h;
+            ans = Math.max(ans, area);
+            if (height[low] < height[high]) {
+                low++;
+            } else {
+                high--;
+            }
+        }
+        return ans;}
 
 
 4Sum:
