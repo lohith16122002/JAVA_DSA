@@ -1,3 +1,24 @@
+Container with most water
+(brute force)
+class Solution {
+    public int maxArea(int[] height) {
+        int n=height.length;
+        //int low=0,high=n-1;
+        int ans=0;
+        for(int i=0;i<n;i++){//int container=0;
+            for(int j=i+1;j<n;j++){
+                int container=j-i;
+                int h=Math.min(height[i],height[j]);
+                int width=container*h;
+                ans=Math.max(ans,width);
+            }
+        }
+        return ans;
+    }
+}
+(optimize)
+
+
 4Sum:
 class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
