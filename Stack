@@ -1,3 +1,26 @@
+Backspace String compare
+
+class Solution {
+    public boolean backspaceCompare(String s, String t) {
+        return build(s).equals(build(t));
+    }
+private String build(String str){
+Stack<Charecter> s=new Stack<>();
+for(char ch:str.toCharArray()){
+if(ch=='#'){
+if(!s.isEmpty()){
+s.pop();
+}}else{
+s.push(ch);
+}
+}
+StringBuilder b=new StringBuilder();
+for(char h:s){
+b.append(h);
+return b.toString();
+}
+}
+Daily Temperatures
 class Solution {
     public int[] dailyTemperatures(int[] temperatures) {
 
