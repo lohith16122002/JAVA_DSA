@@ -14,6 +14,27 @@ class Solution {
     }
 }
 
+brute force approach 
+class Solution {
+    public String removeDuplicates(String s) {
+boolean change=true;
+while(change){
+change=false;
+
+StringBuilder sb=new StringBuilder();
+for(int i=0;i<s.length();i++){
+if(i<sb.length()-1 && sb.charAt(i)==sb.charAt(i+1)){
+i++;
+changed=true;
+}
+else{
+sb.append(s.charAt(i));
+}
+s=sb.toString();
+return s;
+}}
+
+
 Backspace String compare
 
 class Solution {
