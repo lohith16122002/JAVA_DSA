@@ -1,3 +1,24 @@
+Minimum Add to Make Parentheses Valid
+class Solution {
+    public int minAddToMakeValid(String s) {
+        //Stack<Character> st=new Stack<>();or int open=0;
+        int close=0;
+        for(char ch:s.toCharArray()){
+            if(ch=='('){
+                open++;
+            }else{
+                if(open>0){
+                    open--;
+                }else{
+                    close++;
+                }
+            }
+        }return st.size()+close;
+    }
+}
+
+
+valid paranthesis
 import java.util.*;
 
 class Solution {
