@@ -1,3 +1,49 @@
+class CustomStack {
+    
+    int[] st;
+    int maxs;
+    int index;
+
+    public CustomStack(int maxSize) {
+    st = new int[maxSize];
+        maxs = maxSize;
+        index = -1;
+    }
+    
+    public void push(int x) {
+     if(index==maxs-1){
+            return;
+        }
+        index++;
+        st[index]=x;
+    }
+    
+    public int pop() {
+            if(index==-1){
+            return -1;
+        }
+        int val=st[index];
+        index--;
+        return val;
+    }
+    
+    public void increment(int k, int val) {
+        int limit=Math.min(k,index+1);
+        for(int i=0;i<limit;i++){
+            st[i]+=val;
+        }
+    }
+}
+
+/**
+ * Your CustomStack object will be instantiated and called as such:
+ * CustomStack obj = new CustomStack(maxSize);
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * obj.increment(k,val);
+ */
+
+
 Decode String
 class Solution {
     public String decodeString(String s) {
